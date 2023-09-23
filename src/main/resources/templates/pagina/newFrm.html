@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments/navbar.html :: header( title = 'Nuevo Equipo')}"></head>
+    <body>
+        <div class="container">
+            <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Equipos')}"></nav>
+            <div class="row mb-4">
+                <div class="col-md-6 offset-md-3">
+                    <h2>Nuevo Equipo</h2>
+                    <hr/>
+                    <form method="post" th:action="@{'/save'}">
+                        <div class="mb-3">
+                            <label for="deviceName" class="form-label">Device Name</label>
+                            <input name="deviceName" type="text" class="form-control" id="deviceName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deviceType" class="form-label">Device Type</label>
+                            <input name="deviceType" type="text" class="form-control" id="deviceType">
+                        </div>
+                        <div class="mb-3">
+                            <label for="model" class="form-label">Device Type</label>
+                            <input name="model" type="text" class="form-control" id="model">
+                        </div>
+                        <div class="mb-3">
+                            <label for="serialNumber" class="form-label">Model</label>
+                            <input name="serialNumber" type="text" class="form-control" id="serialNumber">
+                        </div>
+                        <a th:href="@{'/equipos'}" class="btn btn-danger">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+    </body>
+</html>

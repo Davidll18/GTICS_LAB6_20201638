@@ -12,16 +12,16 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" th:classappend="${active == active}"
+                            <a class="nav-link" th:classappend="${active == 'gticsf'?'active':''}"
                                th:href="@{/employee}">Lab6 :)</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" th:classappend="${active == 'Employee'?'active':''}"
-                               th:href="@{/employee}">Sitios</a>
+                               th:href="@{/}">Sitios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" th:classappend="${active == 'Shipper'?'active':''}"
-                               th:href="@{/shipper}">Equipos</a>
+                            <a class="nav-link" th:classappend="${active == 'Equipos'?'active':''}"
+                               th:href="@{/equipos}">Equipos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" th:classappend="${active == 'Product'?'active':''}"

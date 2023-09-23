@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Equipos')}"></head>
+<body>
+<main>
+  <div class="container px-4 pb-5">
+    <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Equipos')}"></nav>
+    <h1 class="pb-2 border-bottom">Lista de Equipos</h1>
+    <a class="btn btn-primary mt-4 mb-4" th:href="@{'/new'}">Nuevo Equipo</a>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Device Name</th>
+        <th>Device Type</th>
+        <th>Model</th>
+        <th>Serial Number</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="device, info : ${deviceList}">
+        <td th:text="${info.index + 1}"></td>
+        <td th:text="${device.devicename}"></td>
+        <td th:text="${device.devicetype}"></td>
+        <td th:text="${device.model}"></td>
+        <td th:text="${device.serialnumber}"></td>
+        <td><a class="btn btn-primary"
+               >Editar</a>
+        </td>
+        <td><a class="btn btn-danger"
+               >Borrar</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>
